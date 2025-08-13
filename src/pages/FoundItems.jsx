@@ -48,9 +48,9 @@ const FoundItems = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-gray-900 text-gray-100 pt-24"
+      className="flex flex-col min-h-screen bg-gray-900 text-gray-100 pt-24"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+      <div className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-700 rounded-full mb-4">
@@ -79,9 +79,9 @@ const FoundItems = () => {
           </p>
         </div>
 
-        {/* Items Grid */}
+        {/* Items Grid OR No Items Message */}
         {filteredAndSortedItems.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
             {filteredAndSortedItems.map((item) => (
               <motion.div
                 key={item.id}
@@ -94,7 +94,7 @@ const FoundItems = () => {
             ))}
           </div>
         ) : (
-          <div className="text-center py-16">
+          <div className="text-center py-16 mb-8">
             <div className="w-24 h-24 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
               <CheckCircle className="w-12 h-12 text-gray-500" />
             </div>
@@ -117,6 +117,20 @@ const FoundItems = () => {
           </div>
         )}
       </div>
+
+      {/* Always show Post Found Item button when items exist */}
+      {filteredAndSortedItems.length > 0 && (
+        <div className="text-center mb-12">
+          <motion.a
+            href="/post-item"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-white"
+          >
+            Post a Found Item
+          </motion.a>
+        </div>
+      )}
     </motion.div>
   );
 };
