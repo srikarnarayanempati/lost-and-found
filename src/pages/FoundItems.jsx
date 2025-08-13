@@ -4,6 +4,7 @@ import { useItems } from '../context/ItemContext';
 import ItemCard from '../components/ItemCard';
 import SearchFilter from '../components/SearchFilter';
 import { CheckCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const FoundItems = () => {
   const { foundItems } = useItems();
@@ -106,14 +107,14 @@ const FoundItems = () => {
                 ? 'Try adjusting your search criteria or filters.'
                 : 'No found items have been posted yet.'}
             </p>
-            <motion.a
-              href="/post-item"
+            <Link
+              to="/post-item"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-block px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-white"
             >
               Post a Found Item
-            </motion.a>
+            </Link>
           </div>
         )}
       </div>
@@ -121,14 +122,14 @@ const FoundItems = () => {
       {/* Always show Post Found Item button when items exist */}
       {filteredAndSortedItems.length > 0 && (
         <div className="text-center mb-12">
-          <motion.a
-            href="/post-item"
+          <Link
+            to="/post-item"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-block px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-white"
           >
             Post a Found Item
-          </motion.a>
+          </Link>
         </div>
       )}
     </motion.div>
