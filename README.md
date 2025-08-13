@@ -1,6 +1,6 @@
-# Lost and Found Web Application
+# Lost and Found 
 
-A web application that allows students to post and browse lost or found items. Users can search, filter, and sort items, and easily post new entries when they have lost or found something.
+A web application that allows students to post and browse lost or found items around college campus. Users can search, filter, and sort items, and easily post new entries when they have lost or found something.
 
 ## Features
 
@@ -16,7 +16,7 @@ A web application that allows students to post and browse lost or found items. U
 ## Tech Stack
 
 - **Frontend**: React, Tailwind CSS
-- **Animations**: Framer Motion
+- **Animations**: Framer Motion,GSAP
 - **Icons**: Lucide React
 - **Routing**: React Router
 - **State Management**: React Context API
